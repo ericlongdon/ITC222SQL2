@@ -1,0 +1,25 @@
+CREATE TABLE BusService
+(
+  BusServiceKey int identity(1,1) primary key,
+  BusServiceName nvarchar(225) not null,
+  BusServiceDescription nvarchar(225) null
+
+)
+CREATE TABLE Maintenance
+(
+  MaintenanceKey  int identity(1,1) primary key,
+  MaintenanceDate date not null,
+  Buskey int not null foreign key references Bus(BusKey) 
+ 
+ )
+
+
+CREATE TABLE MaintenanceDetail
+(
+  MaintenanceDetailKey
+  MaintenanceKey
+  EmployeeKey
+  BusServiceKey
+  MaintenanceNotes
+
+)
