@@ -1,7 +1,7 @@
 CREATE TABLE BusService
 (
   BusServiceKey int identity(1,1) primary key,
-  BusServiceName nvarchar(225) not null,
+  BusServiceName nvarchar(255) not null,
   BusServiceDescription nvarchar(225) null
 
 )
@@ -16,10 +16,10 @@ CREATE TABLE Maintenance
 
 CREATE TABLE MaintenanceDetail
 (
-  MaintenanceDetailKey
-  MaintenanceKey
-  EmployeeKey
-  BusServiceKey
-  MaintenanceNotes
+  MaintenanceDetailKey int identity(1,1),
+  MaintenanceKey int not null,
+  EmployeeKey int not null,
+  BusServiceKey int not null,
+  MaintenanceNotes nvarchar(255) 
 
 )
