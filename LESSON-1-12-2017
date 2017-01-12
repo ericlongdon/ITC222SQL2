@@ -1,34 +1,35 @@
 Use Community_Assist
 
-Select PersonLastName from Person where PersonLastName
+Select PersonLastName from Person 
 
-Select Top 5 GrantRequestDate, GrantTypekey, GrantRequestAmount
-From GrantRquest
+Select GrantRequestDate, GrantTypekey, GrantRequestAmount
+From GrantRequest
 order by GrantRequestAmount Desc
-offset 5 rows fetch next 4 rows only;
+offset 5 rows fetch next 4 rows only
 
 Select Year(GrantRequestDate) as [Year], GrantTypeKey, GrantRequestAmount
 from GrantRequest
 
-Select Month(GrantRequestDate) as [Month], GrantTypeKey GrantType GrantRequestAmount Amount
-from GrantRequest;
+Select Month(GrantRequestDate) as [Month], GrantTypeKey GrantType, GrantRequestAmount Amount
+from GrantRequest
 
-Select Day(GrantRequestDate) as [Day], GrantTypeKey GrantType GrantRequestAmount Amount
-from GrantRequest;
+Select Day(GrantRequestDate) as [Day], GrantTypeKey GrantType, GrantRequestAmount Amount
+from GrantRequest
 
-Select DatePart(second, GrandRequestDate) from GrantRequest;
+Select DatePart(second, GrantRequestDate) from GrantRequest
 
 Select DateDiff(Day, GetDate(), '3/23/2017') [Days Left in Quarter]
 
 Select DonationAmount, DonationAmount*.10 Operations, DonationAmount*.90 Charity from donation
 
 
-Select DonationAmount, cast(DonationAmount*.10 Operations as decimal(10,2)), DonationAmount*.90 Charity from donation
+Select DonationAmount, cast(DonationAmount as decimal(10,2))*.10 Operations, DonationAmount*.90 Charity from donation
 
 Select format(DonationAmount, '$ #,##0.00') as Amount from donation
 
-Declare @SocialSec as nchar(9) '519551234'
-Select SUBSTRING(@sSocialSec, 1, 3) + '-' + SUBSTRING(@sSocialSec, 4, 2) + '-' + SUBSTRING(@sSocialSec, 6, 4) 
+Declare @SocialSec as nchar(9) 
+set @SocialSec='519551234'
+Select SUBSTRING(@SocialSec, 1, 3) + '-' + SUBSTRING(@SocialSec, 4, 2) + '-' + SUBSTRING(@SocialSec, 6, 4) 
 as SSNumber
 
 /* Aggregate functions */
